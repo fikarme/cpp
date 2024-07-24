@@ -1,29 +1,5 @@
-// #include <iostream>
-// #include <cctype>
-
-// int main(int ac, char **av)
-// {
-// 	(void)ac;
-//     int i, j = 1;
-//     char **s = av;
-// 	std::string mgfn = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-// 	if(av[1] == NULL)
-// 		std::cout << mgfn;
-//     while(s[j])
-//     {
-//         i = 0;
-//         while(s[j][i])
-//         {
-//             s[j][i] = std::toupper(s[j][i]);
-//             std::cout << s[j][i];
-//             i++;
-//         }
-//         j++;
-//     }
-// 	std::cout << std::endl;
-// }
-
 #include <iostream>
+// using namespace std;
 
 int main(int ac, char **av) {
     if (ac==1)
