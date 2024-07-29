@@ -7,11 +7,11 @@
 
 class Contact {
     private:
-        std::string  name;
-        std::string  surname;
-        std::string  nickname;
-        std::string  phonenumber;
-        std::string  darkestsecret;
+        std::string name;
+        std::string surname;
+        std::string nickname;
+        std::string phonenumber;
+        std::string darkestsecret;
     public:
         Contact();
         void set_contact(std::string n, std::string sn, std::string nn, std::string pn, std::string ds);

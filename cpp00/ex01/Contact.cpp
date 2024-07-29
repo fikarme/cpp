@@ -8,8 +8,7 @@ Contact::Contact() {
 	darkestsecret = "";
 }
 
-void    Contact::set_contact(std::string n, std::string sn,
-							std::string nn, std::string pn, std::string ds)
+void    Contact::set_contact(std::string n, std::string sn, std::string nn, std::string pn, std::string ds)
 {
     Contact::name = n;
     Contact::surname = sn;
