@@ -18,4 +18,5 @@ int main(){
         Harl harl;
         harl.complain(input);
     }
+    return 0;
 }
