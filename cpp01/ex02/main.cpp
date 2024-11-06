@@ -1,12 +1,6 @@
 #include <iostream>
 #include <string>
 
-void __attribute__((destructor)) calledLast(); 
-
-void calledLast(){
-    system("leaks lain");
-}
-
 int main(){
     std::string var			= "HI THIS IS BRAIN";
     std::string *stringPTR	= &var;

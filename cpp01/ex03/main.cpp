@@ -2,12 +2,6 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-void __attribute__((destructor)) calledLast(); 
-
-void calledLast(){
-    system("leaks lain");
-}
-
 int main(){
 	{
 		Weapon club = Weapon("crude spiked club");

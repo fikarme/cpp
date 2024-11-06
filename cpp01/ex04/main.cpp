@@ -2,12 +2,6 @@
 #include <string>
 #include <fstream>
 
-void __attribute__((destructor)) calledLast(); 
-
-void calledLast(){
-    system("leaks lain");
-}
-
 int main(int ac, char **av){
     if(ac != 4){
         std::cerr << "err: invalid input format \"./lain <filename> <s1> <s2>\"" << std::endl;

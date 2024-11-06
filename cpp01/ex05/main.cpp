@@ -1,22 +1,14 @@
 #include "Harl.hpp"
 
-void __attribute__((destructor)) calledLast(); 
-
-void calledLast(){
-    system("leaks lain");
-}
-
-int main(){
-	std::string input;
-    while(1){
-        std::cout << "level:";
-		getline(std::cin, input);
-		if(std::cin.eof())
-			break;
-        if(input.empty())
-            continue;
-        Harl harl;
-        harl.complain(input);
+int main(int ac, char **av){
+	Harl harl;
+	if(ac == 1){
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
+	}
+	else if(ac == 2){
+        harl.complain(av[1]);
     }
-    return 0;
 }
