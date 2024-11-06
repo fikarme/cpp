@@ -1,9 +1,16 @@
 #include "Zombie.hpp"
 
-int main() {
+void __attribute__((destructor)) calledLast(); 
+
+void calledLast(){
+    system("leaks lain");
+}
+
+int main(){
     Zombie *myzombie = newZombie("akef");
 
-    zombie->announce();
-    delete zombie;
+    myzombie->announce();
+    delete myzombie;
     randomChump("akefrandom");
+	return 0;
 }

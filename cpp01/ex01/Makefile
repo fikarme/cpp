@@ -1,13 +1,20 @@
-NAME = zzombi
+NAME    = lain
+CPP     = c++
+FLAGS   = -std=c++98 -Wall -Wextra -Werror
+SRCS    = $(wildcard *.cpp)
+OBJS    = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
+$(NAME): $(OBJS)
+	@$(CPP) $(FLAGS) $(SRCS) -o $(NAME)
+
 clean:
+	@rm -rf $(OBJS)
+
+fclean: clean
 	@rm -rf $(NAME)
 
-re: clean all
+re: fclean all
 
-$(NAME):
-	@c++ -std=c++98 -Wall -Wextra -Werror -fsanitize=address $(wildcard *.cpp) -o $(NAME)
-
-.PHONY: all clean re
+.PHONY: all clean fclean re

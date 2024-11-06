@@ -1,6 +1,6 @@
-NAME    = phonebook
+NAME    = PhoneBook
 CPP     = @c++
-FLAGS   = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
+FLAGS   = -std=c++98 -Wall -Wextra -Werror
 SRCS    = $(wildcard *.cpp)
 OBJS    = $(SRCS:.cpp=.o)
 
@@ -16,10 +16,5 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
-
-akef:
-	@make fclean 
-	@make all
-	@make clean
 
 .PHONY: all clean fclean re

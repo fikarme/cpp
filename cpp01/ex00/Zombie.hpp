@@ -2,13 +2,14 @@
 #define ZOMBIE_HPP
 
 #include <iostream>
+#include <string>
 
-class Zombie {
+class Zombie{
     private:
-        std::string name;
+        std::string _name;
     public:
-        Zombie();
         Zombie(std::string name);
+        Zombie();
         ~Zombie();
         void announce();
 };

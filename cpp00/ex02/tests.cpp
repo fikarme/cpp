@@ -59,7 +59,7 @@ int		main( void ) {
 
 	Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
-	system("leaks executablename")
+
 	return 0;
 }
 
