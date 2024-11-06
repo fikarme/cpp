@@ -1,4 +1,5 @@
 cin.of ekle phonebooka
+
 getline harl
 
 
@@ -12,3 +13,5 @@ If the implementation is different but the exercise works, you should mark
 it as valid. The only thing that is not allowed is using a ugly if/elseif/else.
 The student could have chosen to change the message Harl displays or to
 display the examples given in the subject, both are valid.
+
+harlda ctrl z yapıp fg yaptığında arkadan çekemiyosun getline whileından çıkıyo onsuz puştla sadece argüman alsa yeter
