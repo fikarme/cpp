@@ -6,7 +6,7 @@ Fixed::~Fixed(){
 
 Fixed::Fixed(){
     cout << "Default costructer called" << endl;
-    this->fixedPointNb = 0;
+    _num = 0;
 }
 
 Fixed::Fixed(const Fixed & cpy){
@@ -16,16 +16,16 @@ Fixed::Fixed(const Fixed & cpy){
 
 Fixed & Fixed::operator = (const Fixed & fix){
     cout << "Copy assigment operator called" << endl;
-    this->fixedPointNb = fix.getRawBits();
+    _num = fix.getRawBits();
     return (*this);
 }
 
-int Fixed::getRawBits(void) const{
+int Fixed::getRawBits() const{
     cout << "getRawBits member function called" << endl;
-    return (this->fixedPointNb);
+    return (_num);
 }
 
 void Fixed::setRawBits(int const raw){
     cout << "setRawBits member function called" << endl;
-    this->fixedPointNb = raw;
+    _num = raw;
 }
