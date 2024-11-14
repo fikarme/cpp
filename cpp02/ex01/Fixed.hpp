@@ -2,6 +2,7 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <math.h>
 using std::cout;
 using std::endl;
 using std::ostream;
