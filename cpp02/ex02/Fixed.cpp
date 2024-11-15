@@ -20,9 +20,9 @@ Fixed & Fixed::operator=(const Fixed &number){
 	return (*this);
 }
 
-Fixed::Fixed(const int intval){
+Fixed::Fixed(const int intVal){
 	cout << "Int constructor called" << endl;
-	_num = intval << _fracBits;
+	_num = intVal << _fracBits;
 }
 
 Fixed::Fixed(const float floatVal){
@@ -78,29 +78,29 @@ bool Fixed::operator!=(const Fixed &number){
 }
 
 Fixed Fixed::operator+(const Fixed &number){
-	Fixed retval(toFloat() + number.toFloat());
-	return (retval);
+	Fixed retVal(toFloat() + number.toFloat());
+	return (retVal);
 }
 
 Fixed Fixed::operator-(const Fixed &number){
-	Fixed retval(toFloat() - number.toFloat());
-	return (retval);
+	Fixed retVal(toFloat() - number.toFloat());
+	return (retVal);
 }
 
 Fixed Fixed::operator*(const Fixed &number){
-	Fixed retval(toFloat() * number.toFloat());
-	return (retval);
+	Fixed retVal(toFloat() * number.toFloat());
+	return (retVal);
 }
 
 Fixed Fixed::operator/(const Fixed &number){
-	Fixed retval(toFloat() / number.toFloat());
-	return (retval);
+	Fixed retVal(toFloat() / number.toFloat());
+	return (retVal);
 }
 
 Fixed Fixed::operator++(int){
-	Fixed retval = *this;
+	Fixed retVal = *this;
 	_num++;
-	return (retval);
+	return (retVal);
 }
 
 Fixed &Fixed::operator++(){
@@ -109,9 +109,9 @@ Fixed &Fixed::operator++(){
 }
 
 Fixed Fixed::operator--(int){
-	Fixed retval = *this;
+	Fixed retVal = *this;
 	_num--;
-	return (retval);
+	return (retVal);
 }
 
 Fixed &Fixed::operator--(){

@@ -25,9 +25,9 @@ Fixed::Fixed(const float floatVal){
 	_num = int(roundf(floatVal * (1 << _fracBits)));
 }
 
-Fixed::Fixed(const int intval){
+Fixed::Fixed(const int intVal){
 	cout << "Int constructor called" << endl;
-	_num = intval << _fracBits;
+	_num = intVal << _fracBits;
 }
 
 float Fixed::toFloat() const{
