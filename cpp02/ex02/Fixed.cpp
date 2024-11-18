@@ -1,8 +1,8 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed(){
-	_num = 0;
 	cout << "Default constructor called" << endl;
+	_num = 0;
 }
 
 Fixed::~Fixed(){
@@ -17,7 +17,7 @@ Fixed::Fixed(const Fixed &copy){
 Fixed & Fixed::operator=(const Fixed &number){
 	cout << "Copy assigment operator called" << endl;
 	_num = number._num;
-	return (*this);
+	return *this;
 }
 
 Fixed::Fixed(const int intVal){
@@ -40,7 +40,7 @@ int Fixed::toInt(void) const{
 
 ostream &operator<<(ostream &output, const Fixed &fixed){
 	output << fixed.toFloat();
-	return (output);
+	return output;
 }
 
 int	Fixed::getRawBits( void ) const{
@@ -79,66 +79,66 @@ bool Fixed::operator!=(const Fixed &number){
 
 Fixed Fixed::operator+(const Fixed &number){
 	Fixed retVal(toFloat() + number.toFloat());
-	return (retVal);
+	return retVal;
 }
 
 Fixed Fixed::operator-(const Fixed &number){
 	Fixed retVal(toFloat() - number.toFloat());
-	return (retVal);
+	return retVal;
 }
 
 Fixed Fixed::operator*(const Fixed &number){
 	Fixed retVal(toFloat() * number.toFloat());
-	return (retVal);
+	return retVal;
 }
 
 Fixed Fixed::operator/(const Fixed &number){
 	Fixed retVal(toFloat() / number.toFloat());
-	return (retVal);
+	return retVal;
 }
 
 Fixed Fixed::operator++(int){
 	Fixed retVal = *this;
 	_num++;
-	return (retVal);
+	return retVal;
 }
 
 Fixed &Fixed::operator++(){
 	_num++;
-	return (*this);
+	return *this;
 }
 
 Fixed Fixed::operator--(int){
 	Fixed retVal = *this;
 	_num--;
-	return (retVal);
+	return retVal;
 }
 
 Fixed &Fixed::operator--(){
 	_num--;
-	return (*this);
+	return *this;
 }
 
 Fixed &Fixed::min(Fixed &f1, Fixed &f2){
 	if (f1 < f2)
-		return (f1);
-	return (f2);
+		return f1;
+	return f2;
 }
 
 const Fixed &Fixed::min(const Fixed &f1, const Fixed &f2){
 	if (f1._num < f2._num)
-		return (f1);
-	return (f2);
+		return f1;
+	return f2;
 }
 
 Fixed &Fixed::max(Fixed &f1, Fixed &f2){
 	if (f1 > f2)
-		return (f1);
-	return (f2);
+		return f1;
+	return f2;
 }
 
 const Fixed &Fixed::max(const Fixed &f1, const Fixed &f2){
 	if (f1._num > f2._num)
-		return (f1);
-	return (f2);
+		return f1;
+	return f2;
 }

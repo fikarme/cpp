@@ -17,12 +17,12 @@ Fixed::Fixed(const Fixed & cpy){
 Fixed & Fixed::operator = (const Fixed & fix){
     cout << "Copy assigment operator called" << endl;
     _num = fix.getRawBits();
-    return (*this);
+    return *this;
 }
 
 int Fixed::getRawBits() const{
     cout << "getRawBits member function called" << endl;
-    return (_num);
+    return _num;
 }
 
 void Fixed::setRawBits(int const raw){
