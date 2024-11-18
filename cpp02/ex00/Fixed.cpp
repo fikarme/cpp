@@ -5,12 +5,12 @@ Fixed::~Fixed(){
 }
 
 Fixed::Fixed(){
-    cout << "Default costructer called" << endl;
+    cout << "Default constructer called" << endl;
     _num = 0;
 }
 
 Fixed::Fixed(const Fixed & cpy){
-    cout << "Copy costructer called" << endl;
+    cout << "Copy constructer called" << endl;
     *this = cpy;
 }
 
