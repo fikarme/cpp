@@ -2,3 +2,4 @@
 *.out
 lain
 .DS_Store
+.vscode
