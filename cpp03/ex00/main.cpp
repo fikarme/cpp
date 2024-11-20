@@ -36,15 +36,15 @@
 #include "ClapTrap.hpp"
 
 int main() {
-    ClapTrap cp1("NARUTO");
-    ClapTrap cp2("LUFFY");
-    ClapTrap cp3("FIKARME");
+    ClapTrap cp1("akef");
+    ClapTrap cp2("emre");
+    ClapTrap cp3("demir");
 
-    cp1.attack("LUFFY");
-    cp2.takeDamage(10000);
+    cp1.attack("zz");
+    cp2.takeDamage(7);
     
-    cp1.attack("LUFFY");
-    cp2.takeDamage(10000);
+    cp1.attack("xx");
+    cp2.takeDamage(9);
 
     cp3.beRepaired(1);
     cp3.takeDamage(100);

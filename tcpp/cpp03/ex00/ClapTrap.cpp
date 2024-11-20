@@ -50,7 +50,8 @@ void ClapTrap::attack(const string &target) {
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	if (this->hitPoints > 0 && this->energyPoints > 0) {
-		cout << "ClapTrap " << this->name << " takes " << amount << " points of damage!" << endl;
+		cout << "ClapTrap " << this->name << " takes " << amount
+		<< " points of damage!" << endl;
 		this->hitPoints -= amount;
 		if (this->hitPoints <= 0) {
 			cout << "ClapTrap " << this->name << " is dead" << endl;
