@@ -9,7 +9,7 @@ ClapTrap::ClapTrap(){
     _hitPoints = 10;
     _energyPoints = 10;
     _attackDamage = 0;
-    cout << "default constructor called" << endl;
+    cout << "ScavTrap default constructor called" << endl;
 }
 
 ClapTrap::ClapTrap(string name){
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(string name){
     _hitPoints = 10;
     _energyPoints = 10;
     _attackDamage = 0;
-    cout << "constructor called: " << _name << endl;
+    cout << "ScavTrap constructor called: " << _name << endl;
 	cout << _name << ": Hey, best friend!" << endl;
 }
 
