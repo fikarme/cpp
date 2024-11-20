@@ -8,7 +8,7 @@ using std::endl;
 using std::string;
 
 class ClapTrap{
-    private:
+    protected:
         string _name;
         unsigned int _hitPoints;
         unsigned int _energyPoints;
