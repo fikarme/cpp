@@ -5,14 +5,13 @@ SRCS    = $(wildcard *.cpp)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME):
 	@$(CPP) $(FLAGS) $(SRCS) -o $(NAME)
 
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf $(NAME)
 
 fclean: clean
-	@rm -rf $(NAME)
 
 re: fclean all
 

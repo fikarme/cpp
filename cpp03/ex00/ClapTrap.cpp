@@ -1,4 +1,3 @@
-
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string Name){
@@ -91,10 +90,10 @@ void ClapTrap::beRepaired(unsigned int amount){
     std::cout << "ClapTrap " <<this->get_name() << " has been repaired by " << amount << " points!"<< std::endl; 
 }
 
-// void ClapTrap::print_status()
-// {
-//     std::cout<< "attack_damage: "<<get_damage()<<std::endl;
-//     std::cout<< "energy:" << get_energy()<<std::endl;
-//     std::cout<< "hit:" <<get_hit()<<std::endl;
-//     std::cout<<get_name()<<std::endl;
-// }
+void ClapTrap::print_status()
+{
+    std::cout<< "attack_damage: "<<get_damage()<<std::endl;
+    std::cout<< "energy:" << get_energy()<<std::endl;
+    std::cout<< "hit:" <<get_hit()<<std::endl;
+    std::cout<< "name:" <<get_name()<<std::endl;
+}
