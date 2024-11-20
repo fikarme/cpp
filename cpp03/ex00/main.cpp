@@ -40,13 +40,24 @@ int main() {
     ClapTrap cp2("emre");
     ClapTrap cp3("demir");
 
+	cout << endl;
     cp1.attack("zz");
+
+	cout << endl;
     cp2.takeDamage(7);
     
+	cout << endl;
     cp1.attack("xx");
+
+	cout << endl;
     cp2.takeDamage(9);
 
+	cout << endl;
     cp3.beRepaired(1);
+	
+	cout << endl;
     cp3.takeDamage(100);
+
+	cout << endl;
     cp3.takeDamage(120);
 }

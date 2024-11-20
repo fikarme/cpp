@@ -40,6 +40,7 @@ void ClapTrap::attack(const std::string& target){
         cout << "ClapTrap " << _name << " attacks " << target;
 		cout << ", causing " << _attackDamage << " points of damage!" << endl;
         _energyPoints -= 1;
+		cout << _name << ": Is it dead? Can, can I open my eyes now?" << endl;
     } else if(_hitPoints <= 0) {
 		cout << "ClapTrap " << _name << " is dead and cannot attack!" << endl;
 		return;
@@ -53,11 +54,12 @@ void ClapTrap::takeDamage(unsigned int amount){
     if(_hitPoints > 0){
         cout << "ClapTrap " << _name << " takes " << amount << " points of damage!" << endl;
         _hitPoints -= amount;
-		if(_hitPoints <= 0)
+		if(_hitPoints <= 0){
+			cout << _name << ": My robotic flesh! AAHH!" << endl;
 			cout << "ClapTrap " << _name << "is dead :(" << endl;
-		else
+		} else
 			cout << "ClapTrap " << _name << " " << _hitPoints << " hit points left!" << endl;
-
+		cout << _name << ": I'll stop talking when I'm dead!" << endl;
     } else{
         cout << "ClapTrap " << _name << " is already dead :(" << endl;
 		return;
@@ -69,6 +71,9 @@ void ClapTrap::beRepaired(unsigned int amount){
         cout << _name << " repaired itself and got " << amount << " points!" << endl;
         _hitPoints += amount;
         _energyPoints -= 1;
-    } else
+		cout << _name << ": Sweet life juice!" << endl;
+    } else{
         cout << _name << " has no energy or hit points left!" << endl;
+		cout << _name << ": Dangit, I'm out!" << endl;
+	}
 }
