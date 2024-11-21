@@ -10,9 +10,9 @@ using std::string;
 class ClapTrap{
     protected:
         string _name;
-        unsigned int _hitPoints;
-        unsigned int _energyPoints;
-        unsigned int _attackDamage;
+        int _hitPoints;
+        int _energyPoints;
+        int _attackDamage;
     public:
         ~ClapTrap();
         ClapTrap();
