@@ -1,6 +1,7 @@
 #include "FragTrap.hpp"
 
 int main(){
+	int x;
     FragTrap ct("ramo");
     for (int i = 0; i < 3; i++){
         // ct.print_status();

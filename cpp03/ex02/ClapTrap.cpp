@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::~ClapTrap(){
-    cout << "destructor called: " << _name << endl;
+    cout << "ClapTrap destructor called: " << _name << endl;
 }
 
 ClapTrap::ClapTrap(){
@@ -9,7 +9,7 @@ ClapTrap::ClapTrap(){
     _hitPoints = 10;
     _energyPoints = 10;
     _attackDamage = 0;
-    cout << "ScavTrap default constructor called" << endl;
+    cout << "ClapTrap default constructor called" << endl;
 }
 
 ClapTrap::ClapTrap(string name){
@@ -17,17 +17,17 @@ ClapTrap::ClapTrap(string name){
     _hitPoints = 10;
     _energyPoints = 10;
     _attackDamage = 0;
-    cout << "ScavTrap constructor called: " << _name << endl;
+    cout << "ClapTrap constructor called: " << _name << endl;
 	cout << _name << ": Hey, best friend!" << endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy){
-    cout << "copy constructor called: " << _name << endl;
+    cout << "ClapTrap copy constructor called: " << _name << endl;
     *this = copy;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &copy){
-	cout << "assignation operator called: " << copy._name << "-->" << _name << endl;
+	cout << "ClapTrap assignation operator called: " << copy._name << "-->" << _name << endl;
     _name = copy._name;
     _energyPoints = copy._energyPoints;
     _attackDamage = copy._attackDamage;
@@ -41,10 +41,9 @@ void ClapTrap::attack(const string& target){
 		<< ", causing " << _attackDamage << " points of damage!" << endl;
         _energyPoints -= 1;
 		cout << _name << ": Is it dead? Can, can I open my eyes now?" << endl;
-    } else if(_hitPoints <= 0) {
+    } else if(_hitPoints <= 0){
 		cout << "ClapTrap " << _name << " is dead and cannot attack!" << endl;
-		return;
-    } else if(_energyPoints <= 0) {
+    } else if(_energyPoints <= 0){
 		cout << "ClapTrap " << _name << " is exhausted and cannot attack!" << endl;
 	}
 }
@@ -68,12 +67,12 @@ void ClapTrap::takeDamage(unsigned int amount){
 
 void ClapTrap::beRepaired(unsigned int amount){
     if(_energyPoints > 0 && _hitPoints > 0){
-        cout << _name << " repaired itself and got " << amount << " points!" << endl;
+        cout << "ClapTrap " << _name << " repaired itself and got " << amount << " points!" << endl;
         _hitPoints += amount;
         _energyPoints -= 1;
 		cout << _name << ": Sweet life juice!" << endl;
     } else{
-        cout << _name << " has no energy or hit points left!" << endl;
+        cout << "ClapTrap " << _name << " has no energy or hit points left!" << endl;
 		cout << _name << ": Dangit, I'm out!" << endl;
 	}
 }

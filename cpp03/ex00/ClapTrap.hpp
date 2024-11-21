@@ -25,4 +25,3 @@ class ClapTrap{
 };
 
 #endif
-

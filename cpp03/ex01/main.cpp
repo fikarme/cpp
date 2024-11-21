@@ -1,5 +1,3 @@
-
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp" // ????
 
 // int main(){
@@ -52,8 +50,30 @@
 //     cp3.takeDamage(120);
 // }
 
+// int main() {
+//     ScavTrap st("zart");
+// 	cout << endl;
+//     st.attack("zort");
+// 	cout << endl;
+//     st.beRepaired(3);
+// 	cout << endl;
+//     st.guardGate();
+//     return 0;
+// }
+
 int main() {
     ScavTrap st("zart");
+	ClapTrap sss("zzzz");
+	sss = st;
+	sss.attack("mal");
+
+	// ClapTrap *x[2];
+	// x[0] = new ScavTrap("1");
+	// x[1] = new ClapTrap("2");
+	// x[0]->attack("akefffff");
+	// x[1]->attack("akefffff");
+	// x[0]->guardGate();
+
 	cout << endl;
     st.attack("zort");
 	cout << endl;
