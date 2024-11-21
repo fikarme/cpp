@@ -42,9 +42,8 @@ void ScavTrap::attack(const string& target){
     } else if(_hitPoints <= 0){
 		cout << "ScavTrap " << _name << " is dead and cannot attack!" << endl;
 		return;
-    } else if(_energyPoints <= 0){
+    } else if(_energyPoints <= 0)
 		cout << "ScavTrap " << _name << " is exhausted and cannot attack!" << endl;
-
 }
 
 void ScavTrap::guardGate(){
