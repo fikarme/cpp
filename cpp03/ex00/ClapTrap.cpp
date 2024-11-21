@@ -59,10 +59,8 @@ void ClapTrap::takeDamage(unsigned int amount){
 			cout << "ClapTrap " << _name << " " << _hitPoints << " hit points left!" << endl;
 			cout << _name << ": I'll stop talking when I'm dead!" << endl;
 		}
-    } else{
+    } else
         cout << "ClapTrap " << _name << " is already dead :(" << endl;
-		return;
-	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
