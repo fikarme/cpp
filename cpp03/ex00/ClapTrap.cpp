@@ -37,16 +37,15 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &copy){
 
 void ClapTrap::attack(const string& target){
     if(_hitPoints > 0 && _energyPoints > 0 ){
-        cout << "ClapTrap " << _name << " attacks " << target;
-		cout << ", causing " << _attackDamage << " points of damage!" << endl;
+        cout << "ClapTrap " << _name << " attacks " << target
+		<< ", causing " << _attackDamage << " points of damage!" << endl;
         _energyPoints -= 1;
 		cout << _name << ": Is it dead? Can, can I open my eyes now?" << endl;
     } else if(_hitPoints <= 0) {
 		cout << "ClapTrap " << _name << " is dead and cannot attack!" << endl;
-		return;
+		return; // ???
     } else if(_energyPoints <= 0) {
 		cout << "ClapTrap " << _name << " is exhausted and cannot attack!" << endl;
-		return;
 	}
 }
 

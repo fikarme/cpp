@@ -1,5 +1,6 @@
 
-// #include "ClapTrap.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp" // ????
 
 // int main(){
 //     ClapTrap ct("a");
@@ -8,7 +9,6 @@
 //     // ct.print_status();
 //     ct.takeDamage(10);
 //     // ct.print_status();
-
 //     for (int i = 0; i < 10; i++)
 //     {
 //         ct.beRepaired(1);
@@ -29,35 +29,36 @@
 //         ct.takeDamage(2);
 //         // ct.print_status();
 //     }
-//     ct.print_status();
-    
+//     ct.print_status(); 
 // }
 
-#include "ClapTrap.hpp"
+// int main() {
+//     ClapTrap cp1("akef");
+//     ClapTrap cp2("emre");
+//     ClapTrap cp3("demir");
+// 	cout << endl;
+//     cp1.attack("zz");
+// 	cout << endl;
+//     cp2.takeDamage(7);
+// 	cout << endl;
+//     cp1.attack("xx");
+// 	cout << endl;
+//     cp2.takeDamage(9);
+// 	cout << endl;
+//     cp3.beRepaired(1);
+// 	cout << endl;
+//     cp3.takeDamage(100);
+// 	cout << endl;
+//     cp3.takeDamage(120);
+// }
 
 int main() {
-    ClapTrap cp1("akef");
-    ClapTrap cp2("emre");
-    ClapTrap cp3("demir");
-
+    ScavTrap st("zart");
 	cout << endl;
-    cp1.attack("zz");
-
+    st.attack("zort");
 	cout << endl;
-    cp2.takeDamage(7);
-    
+    st.beRepaired(3);
 	cout << endl;
-    cp1.attack("xx");
-
-	cout << endl;
-    cp2.takeDamage(9);
-
-	cout << endl;
-    cp3.beRepaired(1);
-	
-	cout << endl;
-    cp3.takeDamage(100);
-
-	cout << endl;
-    cp3.takeDamage(120);
+    st.guardGate();
+    return 0;
 }
