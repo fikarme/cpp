@@ -1,7 +1,11 @@
 #include "ScavTrap.hpp"
 
 int main(){
-    ScavTrap st("zart");
+    ScavTrap st("kart");
+	cout << endl;
+    ScavTrap st2("zart");
+	cout << endl;
+	st2 = st;
 	cout << endl;
     st.attack("zort");
 	cout << endl;

@@ -12,7 +12,7 @@ ScavTrap::ScavTrap() : ClapTrap(){
     cout << "ScavTrap default constructor called" << endl;
 }
 
-ScavTrap::ScavTrap(string name){
+ScavTrap::ScavTrap(string name) : ClapTrap(name){
 	_name = name;
     _hitPoints = 100;
     _energyPoints = 50;

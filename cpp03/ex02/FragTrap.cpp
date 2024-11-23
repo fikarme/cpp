@@ -7,16 +7,16 @@ FragTrap::~FragTrap(){
 FragTrap::FragTrap() : ClapTrap(){
 	_name = "default";
     _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
+    _energyPoints = 100;
+    _attackDamage = 30;
     cout << "FragTrap default constructor called" << endl;
 }
 
-FragTrap::FragTrap(string name){
+FragTrap::FragTrap(string name) : ClapTrap(name){
 	_name = name;
     _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
+    _energyPoints = 100;
+    _attackDamage = 30;
     cout << "FragTrap constructor called: " << _name << endl;
 }
 
