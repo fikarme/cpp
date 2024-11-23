@@ -20,7 +20,7 @@ FragTrap::FragTrap(string name) : ClapTrap(name){
     cout << "FragTrap constructor called: " << _name << endl;
 }
 
-FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy._name){
+FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy){
     cout << "FragTrap copy constructor called: " << _name << endl;
     *this = copy;
 }
