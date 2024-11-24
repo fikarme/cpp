@@ -1,7 +1,7 @@
 #include "Animal.hpp"
 
 Animal::~Animal(){
-    cout << "ClapTrap destructor called: " << _type << endl;
+    cout << "Animal destructor called: " << _type << endl;
 }
 
 Animal::Animal(){
@@ -15,7 +15,7 @@ Animal::Animal(string type){
 }
 
 Animal::Animal(const Animal &copy){
-    cout << "ClapTrap copy constructor called: " << _type << endl;
+    cout << "Animal copy constructor called: " << copy._type << "==>" << _type << endl;
     *this = copy;
 }
 
