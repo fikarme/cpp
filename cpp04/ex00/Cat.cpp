@@ -7,27 +7,22 @@ Cat::~Cat(){
 Cat::Cat(){
     cout << "Cat default constructor called" << endl;
     _type = "default";
-    brain = new Brain();
 }
 
 Cat::Cat(string type){
     cout << "Cat type constructor called: " << _type << endl;
     _type = type;
-    brain = new Brain();
 }
 
-Cat::Cat(const Cat &copy){
+Cat::Cat(const Cat &copy) : Animal(copy){
     cout << "Cat copy constructor called: " << copy._type << "==>" << _type << endl;
     *this = copy;
 }
 
 Cat& Cat::operator=(const Cat &copy){
     cout << "Cat assignation operator called: " << copy._type << "-->" << _type << endl;
-    if(this != &copy) {
+    if(this != &copy)
         _type = copy._type;
-        delete brain;
-        brain = new Brain(*copy.brain);
-    }
     return *this;
 }
 

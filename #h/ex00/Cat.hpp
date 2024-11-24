@@ -23,3 +23,4 @@ class Cat : public Animal
         virtual void makeSound() const;
 };
 
+//virtual yanlışlıkla eklenmişti.
