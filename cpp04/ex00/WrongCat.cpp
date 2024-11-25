@@ -10,17 +10,17 @@ WrongCat::WrongCat(){
 }
 
 WrongCat::WrongCat(string type){
-    cout << "WrongCat type constructor called: " << _type << endl;
+    cout << "WrongCat type constructor called: " << type << endl;
     _type = type;
 }
 
 WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal(copy){
-    cout << "WrongCat copy constructor called: " << copy._type << "==>" << _type << endl;
+    cout << "WrongCat copy constructor called: " << copy._type << endl;
     *this = copy;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat &copy){
-    cout << "WrongCat assignment operator called: " << copy._type << "-->" << _type << endl;
+    cout << "WrongCat assignment operator called: " << copy._type << endl;
     if(this != &copy)
         _type = copy._type;
     return *this;

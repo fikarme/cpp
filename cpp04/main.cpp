@@ -40,14 +40,9 @@ int main() {
 
     for (int i = 0; i < 2; ++i) {
         animals[i]->makeSound();
-        delete animals[i]; // This will call the derived class destructor followed by the base class destructor
+        delete animals[i];
+// // This will call the derived class destructor followed by the base class destructor
     }
 
     return 0;
 }
-// dynmaic dispatch: 
-//     - virtual functions
-
-// static dispatch:
-
-//sanal bi sınıfı doğrudan oluşturamazsın ama subtype poly için kullanılabilir

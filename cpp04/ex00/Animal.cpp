@@ -10,19 +10,19 @@ Animal::Animal(){
 }
 
 Animal::Animal(string type){
-    cout << "Animal type constructor called: " << _type << endl;
+    cout << "Animal type constructor called: " << type << endl;
     _type = type;
 }
 
 Animal::Animal(const Animal &copy){
-    cout << "Animal copy constructor called: " << copy._type << "==>" << _type << endl;
+    cout << "Animal copy constructor called: " << copy._type << endl;
     *this = copy;
 }
 
 Animal& Animal::operator=(const Animal &copy){
-	cout << "Animal assignment operator called: " << copy._type << "-->" << _type << endl;
+	cout << "Animal assignment operator called: " << copy._type << endl;
     if(this != &copy)
-        _type = copy._type;
+        _type = copy._type; 
     return *this;
 }
 

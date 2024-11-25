@@ -10,17 +10,17 @@ Dog::Dog(){
 }
 
 Dog::Dog(string type){
-    cout << "Dog type constructor called: " << _type << endl;
+    cout << "Dog type constructor called: " << type << endl;
     _type = type;
 }
 
 Dog::Dog(const Dog &copy): Animal(copy){
-    cout << "Dog copy constructor called: " << copy._type << "==>" << _type << endl;
+    cout << "Dog copy constructor called: " << copy._type << endl;
     *this = copy;
 }
 
 Dog& Dog::operator=(const Dog &copy){
-    cout << "Dog assignment operator called: " << copy._type << "-->" << _type << endl;
+    cout << "Dog assignment operator called: " << copy._type << endl;
     if(this != &copy)
         _type = copy._type;
     return *this;
