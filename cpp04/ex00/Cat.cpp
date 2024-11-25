@@ -6,7 +6,7 @@ Cat::~Cat(){
 
 Cat::Cat(){
     cout << "Cat default constructor called" << endl;
-    _type = "default";
+    _type = "Cat";
 }
 
 Cat::Cat(string type){

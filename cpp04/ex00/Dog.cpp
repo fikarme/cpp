@@ -6,7 +6,7 @@ Dog::~Dog(){
 
 Dog::Dog(){
     cout << "Dog default constructor called" << endl;
-    _type = "default";
+    _type = "Dog";
 }
 
 Dog::Dog(string type){

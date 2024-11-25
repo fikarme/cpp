@@ -8,7 +8,7 @@ Cat::~Cat(){
 
 Cat::Cat(){
     cout << "Cat default constructor called" << endl;
-    _type = "default";
+    _type = "Cat";
     brain = new Brain();
 }
 
@@ -18,7 +18,7 @@ Cat::Cat(string type){
     brain = new Brain();
 }
 
-Cat::Cat(const Cat &copy){
+Cat::Cat(const Cat &copy) : Animal(copy){
     cout << "Cat copy constructor called: " << copy._type << endl;
     *this = copy;
 }
