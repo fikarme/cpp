@@ -20,12 +20,12 @@ Cat::Cat(const Cat &copy) : Animal(copy){
 }
 
 Cat& Cat::operator=(const Cat &copy){
-    cout << "Cat assignation operator called: " << copy._type << "-->" << _type << endl;
+    cout << "Cat assignment operator called: " << copy._type << "-->" << _type << endl;
     if(this != &copy)
         _type = copy._type;
     return *this;
 }
 
 void Cat::makeSound() const{
-    cout << "Meow Meow" << endl;
+    cout << "Miav miyav" << endl;
 }
