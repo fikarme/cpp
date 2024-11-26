@@ -43,8 +43,8 @@ p();
     cat.setIdea("**not a single thought behind those eyes**", 0);
     cout << cat.getIdea(0) <<  endl;
 p();
-    dog.setIdea("walk walk gimme food", 100);
-    cout << dog.getIdea(100) <<  endl;
+    dog.setIdea("walk walk gimme food", 99);
+    cout << dog.getIdea(99) <<  endl;
 p();
 	return 0;
 }

@@ -38,9 +38,15 @@ void Cat::makeSound() const{
 }
 
 void Cat::setIdea(string idea, int i){
-	brain->setIdea(idea, i);
+	if(i < 0 || i >= 100)
+		cout << "wrong i" << endl;
+	else
+		brain->ideas[i] = idea;
 }
 
 string Cat::getIdea(int i){
-	return brain->getIdea(i);
+	if(i < 0 || i >= 100)
+		return "wrong i";
+	else
+		return brain->ideas[i];
 }

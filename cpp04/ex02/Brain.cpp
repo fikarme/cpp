@@ -17,14 +17,6 @@ Brain &Brain::operator=(const Brain &copy){
 	cout << "Brain assignment operator called" << endl;
 	if (this != &copy)
 		for (int i = 0; i < 100; i++)
-			_ideas[i] = copy._ideas[i];
+			ideas[i] = copy.ideas[i];
 	return *this;
-}
-
-void Brain::setIdea(string idea, int i){
-	_ideas[i] = idea;
-}
-
-string Brain::getIdea(int i) const{
-	return _ideas[i];
 }
