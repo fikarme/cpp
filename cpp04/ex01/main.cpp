@@ -18,7 +18,7 @@ p();
 	delete	doggy;
 	delete	funimal;
 p();
-	int		len = 4; // 100
+	int		len = 4;
 	int		i = 0;
 	Animal	*tab[len];
 p();
@@ -48,12 +48,3 @@ p();
 p();
 	return 0;
 }
-
-// int main(){
-// 	Dog basic;
-// 	{
-// 		Dog tmp = basic;
-// 		tmp = basic;
-// 	}
-// 	return 0;
-// }
