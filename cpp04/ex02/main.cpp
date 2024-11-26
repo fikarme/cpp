@@ -2,11 +2,12 @@
 #include "Cat.hpp"
 #include "AAnimal.hpp"
 
-inline void p() {
+inline void p(){
     cout << endl;
 }
 
 int main(){
+p();
 	const AAnimal*	kittie = new Cat();
 	const AAnimal*	doggy = new Dog();
 p();
