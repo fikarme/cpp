@@ -19,6 +19,7 @@ Dog::Dog(string type){
 
 Dog::Dog(const Dog &copy): Animal(copy){
     cout << "Dog copy constructor called: " << copy._type << endl;
+    brain = new Brain();
     *this = copy;
 }
 
@@ -27,8 +28,7 @@ Dog& Dog::operator=(const Dog &copy){
     if(this != &copy){
         _type = copy._type;
 		delete brain;
-    	brain = new Brain();
-    	brain = copy.brain;
+    	brain = new Brain(*copy.brain);
 	}
     return *this;
 }

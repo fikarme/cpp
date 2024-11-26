@@ -1,5 +1,4 @@
 #include "Cat.hpp"
-#include "Brain.hpp"
 
 Cat::~Cat(){
     cout << "Cat destructor called: " << _type << endl;
@@ -20,6 +19,7 @@ Cat::Cat(string type){
 
 Cat::Cat(const Cat &copy) : Animal(copy){
     cout << "Cat copy constructor called: " << copy._type << endl;
+    brain = new Brain();
     *this = copy;
 }
 
@@ -28,8 +28,7 @@ Cat& Cat::operator=(const Cat &copy){
     if(this != &copy){
         _type = copy._type;
 		delete brain;
-    	brain = new Brain();
-    	brain = copy.brain;
+    	brain = new Brain(*copy.brain);
 	}
     return *this;
 }
