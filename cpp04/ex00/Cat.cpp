@@ -14,7 +14,7 @@ Cat::Cat(string type){
     _type = type;
 }
 
-Cat::Cat(const Cat &copy){
+Cat::Cat(const Cat &copy) : Animal(copy){
     cout << "Cat copy constructor called: " << copy._type << endl;
     *this = copy;
 }

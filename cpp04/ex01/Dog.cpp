@@ -17,7 +17,7 @@ Dog::Dog(string type){
     brain = new Brain();
 }
 
-Dog::Dog(const Dog &copy): Animal(copy){
+Dog::Dog(const Dog &copy) : Animal(copy){
     cout << "Dog copy constructor called: " << copy._type << endl;
     brain = new Brain();
     *this = copy;

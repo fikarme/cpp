@@ -1,7 +1,7 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-inline void p() {
+inline void p(){
     cout << endl;
 }
 
@@ -48,3 +48,12 @@ p();
 p();
 	return 0;
 }
+
+// int main(){
+// 	Dog basic;
+// 	{
+// 		Dog tmp = basic;
+// 		tmp = basic;
+// 	}
+// 	return 0;
+// }
