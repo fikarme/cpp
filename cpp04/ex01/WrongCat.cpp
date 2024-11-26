@@ -6,7 +6,7 @@ WrongCat::~WrongCat(){
 
 WrongCat::WrongCat(){
     cout << "WrongCat default constructor called" << endl;
-    _type = "default";
+    _type = "WrongCat";
 }
 
 WrongCat::WrongCat(string type){
