@@ -48,3 +48,4 @@ int main() {
 //   In the non-exceptional case, there is no performance cost for exceptions.
 // Error Codes:
 //   Returning and checking error codes always incurs a performance cost.
+ 
