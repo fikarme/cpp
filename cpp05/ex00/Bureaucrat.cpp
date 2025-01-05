@@ -4,30 +4,28 @@ Bureaucrat::~Bureaucrat(){
 	cout << "Bureaucrat destructor called." << endl;
 }
 
-Bureaucrat::Bureaucrat(const string name, int grade){
-	cout << "Bureaucrat constructor called." << endl;
-	_name = name;
-	try{
-		if (grade > 150)
-			throw (GradeTooLowException());
-		else if (grade < 1)
-			throw (GradeTooHighException());
-		else
-			this->grade = grade;
-	}
-	catch (const exception &e){
-		cout << e.what() << endl;
-	}
+Bureaucrat::Bureaucrat(const string name, int grade) : name(name){
+    cout << "Bureaucrat constructor called." << endl;
+    try {
+        if (grade > 150)
+            throw (GradeTooLowException());
+        else if (grade < 1)
+            throw (GradeTooHighException());
+        else
+            grade = grade;
+    } catch (const std::exception &e){
+        cout << e.what() << endl;
+    }
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &cpy) : name(cpy.name){
+Bureaucrat::Bureaucrat(const Bureaucrat &cpy) : name(cpy.name), grade(cpy.grade){
 	cout << "Bureaucrat copy constructor called." << endl;
-	this->grade = cpy.grade;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &oper){
 	cout << "Bureaucrat assignation operator called." << endl;
-	this->grade = oper.grade;
+	 if (this != &oper)
+		this->grade = oper.grade;
 	return (*this);
 }
 
@@ -45,7 +43,7 @@ void Bureaucrat::increment(){
 	try{
 		if (grade < 1)
 			throw(GradeTooHighException());
-	} catch (const exception &e){
+	} catch (const std::exception &e){
 		this->grade++;
 		cout << e.what() << endl;
 	}
@@ -57,7 +55,7 @@ void Bureaucrat::decrement(){
 	try{
 		if (grade > 150)
 			throw(GradeTooLowException());
-	} catch (const exception &e){
+	} catch (const std::exception &e){
 		this->grade--;
 		cout << e.what() << endl;
 	}
@@ -70,3 +68,9 @@ const char* Bureaucrat::GradeTooHighException::what() const throw(){
 const char* Bureaucrat::GradeTooLowException::what() const throw(){
 	return ("Grade too low.");
 }
+
+// std::ostream &operator << (std::ostream &output, const Bureaucrat &b)
+// {
+//     output << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
+//     return output;
+// }

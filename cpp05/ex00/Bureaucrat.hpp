@@ -23,9 +23,14 @@ class Bureaucrat{
 		int getGrade() const;
 		void increment();
 		void decrement();
+		
+		// class GradeTooHighException : public std::exception {
+		// 	const char* what() const throw();
+		// }; // what version true??
 		class GradeTooHighException : public std::exception {
-			const char* what() const throw();
-		}; // what version true?? 
+			public:
+				virtual const char* what() const throw();
+		};
 		class GradeTooLowException : public std::exception {
 			public:
 				virtual const char* what() const throw();
