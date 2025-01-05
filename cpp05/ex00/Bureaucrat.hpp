@@ -7,7 +7,6 @@
 using std::cout;
 using std::endl;
 using std::string;
-// using std::exception;
 
 class Bureaucrat{
 	private:
@@ -23,7 +22,7 @@ class Bureaucrat{
 		int getGrade() const;
 		void increment();
 		void decrement();
-		
+
 		// class GradeTooHighException : public std::exception {
 		// 	const char* what() const throw();
 		// }; // what version true??
@@ -35,7 +34,6 @@ class Bureaucrat{
 			public:
 				virtual const char* what() const throw();
 		};
-		// std::ostream &operator<<(std::ostream &output, const Bureaucrat &b);
 };
 
 #endif
