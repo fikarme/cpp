@@ -4,7 +4,7 @@ Bureaucrat::~Bureaucrat(){
 	cout << "Bureaucrat destructor called." << endl;
 }
 
-Bureaucrat::Bureaucrat(const string name, int grade) : name(name){
+Bureaucrat::Bureaucrat(const string name, int grade) : _name(name){
     cout << "Bureaucrat constructor called." << endl;
     try {
         if (grade > 150)
@@ -12,7 +12,7 @@ Bureaucrat::Bureaucrat(const string name, int grade) : name(name){
         else if (grade < 1)
             throw (GradeTooHighException());
         else
-            grade = grade;
+            _grade = grade;
     } catch (const std::exception &e){
         cout << e.what() << endl;
     }

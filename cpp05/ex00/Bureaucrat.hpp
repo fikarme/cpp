@@ -10,8 +10,8 @@ using std::string;
 
 class Bureaucrat{
 	private:
-		const string name;
-		int grade;
+		const string _name;
+		int _grade;
 	public:
 		~Bureaucrat();
 		Bureaucrat(const string name, int grade);
