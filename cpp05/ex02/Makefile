@@ -1,12 +1,12 @@
-NAME 	= bureaucrat
-CPP 	= @c++
-FLAGS	= -std=c++98 -Wall -Wextra -Werror
-SRCS 	= 	main.cpp Bureaucrat.cpp AForm.cpp \
-			ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+NAME    = lain
+CPP     = c++
+FLAGS   = -std=c++98 -Wall -Wextra -Werror
+SRCS    = $(wildcard *.cpp)
+HDRS    = $(wildcard *.hpp)
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRCS) $(HDRS)
 	$(CPP) $(FLAGS) $(SRCS) -o $(NAME)
 
 clean:
@@ -15,3 +15,5 @@ clean:
 fclean: clean
 
 re: fclean all
+
+.PHONY: all clean fclean re
