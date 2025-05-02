@@ -16,9 +16,10 @@ AForm *Intern::makeForm(const std::string form, const std::string target) {
 	AForm *iter = NULL;
     std::string form_types[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
-    while (++i < 3)
+    while (++i < 3) {
         if (form == form_types[i])
             break;
+	}
 	switch (i)
 	{
 		case 0:
