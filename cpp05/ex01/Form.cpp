@@ -1,61 +1,56 @@
 #include "Form.hpp"
 
-Form::Form() : name(""), signGrade(150), execGrade(150){
-    isSigned = false;
-    std::cout << "Form constructor is called." << std::endl;
+Form::~Form() {
+	cout << "Form destructor called." << endl;
 }
 
-Form::Form(std::string n, int sg, int eg) : name(n), signGrade(sg), execGrade(eg) {
-    this->isSigned = false;
+Form::Form() : _name(""), _signGrade(150), _execGrade(150), _isSigned(false) {
+    cout << "Form constructor is called." << endl;
+}
+
+Form::Form(string n, int sg, int eg) : _name(n), _signGrade(sg), _execGrade(eg), _isSigned(false) {
     try {
         if (sg < 1 || eg < 1)
             throw (GradeTooHighException());
         else if (sg > 150 || eg > 150)
             throw (GradeTooLowException());
-    } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
+    } catch (exception &e) {
+        cout << e.what() << endl;
     }
-    std::cout << "Form constructor is called." << std::endl;
+    cout << "Form constructor is called." << endl;
 }
 
-std::string Form::getName() const {
-    return (this->name);
+Form::Form(const Form &cpy) : _name(cpy._name), _isSigned(cpy._isSigned), _signGrade(cpy._signGrade), _execGrade(cpy._execGrade) {
+    cout << "Form copy constructor is called." << endl;
 }
 
-int Form::getGrade() const {
-    return (this->signGrade);
-}
-
-
-int Form::getExecGrade() const {
-    return (this->execGrade);
-}
-
-bool Form::getIsSigned() const {
-    return (this->isSigned);
-}
-
-Form::Form(const Form &cpy) : name(cpy.name), isSigned(cpy.isSigned), signGrade(cpy.signGrade), execGrade(cpy.execGrade) {
-    *this = cpy;
-    std::cout << "Form copy constructor is called." << std::endl;
-}
-
-Form &Form::operator = (const Form &cpy) {
-    std::cout << "Form copy assignment constructor is called." << std::endl;
-    if (this != &cpy) {
-    	this->isSigned = cpy.isSigned;
-	}
+Form &Form::operator=(const Form &cpy) {
+    if (this != &cpy)
+    	this->_isSigned = cpy._isSigned;
+    cout << "Form copy assignment constructor is called." << endl;
     return (*this);
 }
 
 void Form::beSigned(const Bureaucrat &b) {
     if (b.getGrade() > this->getGrade())
         throw(GradeTooLowException());
-    this->isSigned = true;
+    this->_isSigned = true;
 }
 
-Form::~Form() {
-	std::cout << "Form destructor called." << std::endl;
+string Form::getName() const {
+    return (this->_name);
+}
+
+int Form::getGrade() const {
+    return (this->_signGrade);
+}
+
+int Form::getExecGrade() const {
+    return (this->_execGrade);
+}
+
+bool Form::getIsSigned() const {
+    return (this->_isSigned);
 }
 
 const char* Form::GradeTooHighException::what() const throw() {
@@ -66,8 +61,7 @@ const char* Form::GradeTooLowException::what() const throw() {
     return ("Grade too low.");
 }
 
-std::ostream &operator << (std::ostream &output, const Form &f)
-{
+ostream &operator<<(ostream &output, const Form &f) {
     output << f.getName() << " Form: sign grade " << f.getGrade() 
         << ", execute grade " << f.getExecGrade() << ", form is signed " << f.getIsSigned() << ".";
     return output;

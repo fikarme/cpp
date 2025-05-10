@@ -1,20 +1,19 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137) {
-    this->target = target;
-}
+ShrubberyCreationForm::~ShrubberyCreationForm() {}
+
+ShrubberyCreationForm::ShrubberyCreationForm(string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &cpy) : AForm(cpy) {}
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator = (const ShrubberyCreationForm &cpy) {
-    this->target = cpy.target;
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &cpy) {
+    this->_target = cpy._target;
     return (*this);
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
-{
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	this->AForm::execute(executor);
-    std::ofstream file((this->target + "_shrubbery").c_str());
+    ofstream file((this->_target + "_shrubbery").c_str());
 
     file << "              _{\\ _{\\{\\/}/}/}__\n"
             "             {/{/\\}{/{/\\}(\\}{/\\} _\n"
@@ -23,7 +22,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
             "        {/{/(_)/}{\\{/)\\}{\\(_){/}/}/}/}\n"
             "       _{\\{/{/{\\{/{/(_)/}/}/}{\\(/}/}/}\n"
             "      {/{/{\\{\\{\\(/}{\\{\\/}/}{\\}(_){\\/}\\}\n"
-            "      _{\\{/{\\{SEXOBERRY/{/\\}\\})\\}{/\\}\n"
+            "      _{\\{/{\\{/{/\\}\\})\\}{/\\}\n"
             "     {/{/{\\{\\(/}{/{\\{\\{\\/})/}{\\(_)/}/}\\}\n"
             "      {\\{\\/}(_){\\{\\{\\/}/}(_){\\/}{\\/}/})/}\n"
             "       {/{\\{\\/}{/{\\{\\{\\/}/}{\\{\\/}/}\\}(_)\n"
@@ -43,11 +42,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
             "  .  '  .       _.-|-._ -|-._  .  '  .\n"
             "              .'   |'- .-|   '.\n"
             "  ..-'   ' .  '.   `-._.-   .'  '  - .\n"
-            "   .-' '        '-._fikarme_.-'     '  .\n"
+            "   .-' '        '-..-'     '  .\n"
             "        .      ~,\n"
-            "    .       .   |\\   .    ' '-.\n" << std::endl;
+            "    .       .   |\\   .    ' '-.\n" << endl;
     file.close();
     
 }
-
-ShrubberyCreationForm::~ShrubberyCreationForm() {}

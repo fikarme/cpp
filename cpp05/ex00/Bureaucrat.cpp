@@ -13,7 +13,7 @@ Bureaucrat::Bureaucrat(const string name, int grade) : _name(name){
             throw (GradeTooHighException());
         else
             _grade = grade;
-    } catch (const std::exception &e){
+    } catch (const exception &e){
         cout << e.what() << endl;
     }
 }
@@ -39,11 +39,10 @@ int Bureaucrat::getGrade() const{
 
 void Bureaucrat::increment(){
 	this->_grade--;
-	
 	try {
 		if (_grade < 1)
 			throw(GradeTooHighException());
-	} catch (const std::exception &e){
+	} catch (const exception &e){
 		this->_grade++;
 		cout << e.what() << endl;
 	}
@@ -51,11 +50,10 @@ void Bureaucrat::increment(){
 
 void Bureaucrat::decrement(){
 	this->_grade++;
-	
 	try {
 		if (_grade > 150)
 			throw(GradeTooLowException());
-	} catch (const std::exception &e){
+	} catch (const exception &e){
 		this->_grade--;
 		cout << e.what() << endl;
 	}

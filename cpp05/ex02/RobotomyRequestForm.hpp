@@ -2,18 +2,19 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
-#include <iostream>
 #include <cstdlib>
+
+using std::rand;
 
 class RobotomyRequestForm : public AForm {
     private:
-        std::string target;
+        string _target;
     public:
-        RobotomyRequestForm(std::string target);
-        RobotomyRequestForm(const RobotomyRequestForm &cpy);
-        RobotomyRequestForm &operator = (const RobotomyRequestForm &cpy);
-        void execute(Bureaucrat const &executor) const;
         ~RobotomyRequestForm();
+        RobotomyRequestForm(string target);
+        RobotomyRequestForm(const RobotomyRequestForm &cpy);
+        RobotomyRequestForm &operator=(const RobotomyRequestForm &cpy);
+        void execute(Bureaucrat const &executor) const;
 };
 
 #endif
