@@ -5,13 +5,12 @@
 
 class PresidentialPardonForm : public AForm {
     private:
-        string target;
+        string _target;
     public:
         ~PresidentialPardonForm();
         PresidentialPardonForm(string target);
         PresidentialPardonForm(const PresidentialPardonForm &cpy);
         PresidentialPardonForm &operator=(const PresidentialPardonForm &cpy);
-
         void execute(Bureaucrat const &executor) const;
 };
 

@@ -9,6 +9,7 @@
 using std::cout;
 using std::endl;
 using std::string;
+using std::ostream;
 using std::exception;
 
 class Bureaucrat;

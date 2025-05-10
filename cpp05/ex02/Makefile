@@ -7,7 +7,7 @@ HDRS    = $(wildcard *.hpp)
 all: $(NAME)
 
 $(NAME): $(SRCS) $(HDRS)
-	$(CPP) $(FLAGS) $(SRCS) -o $(NAME)
+	@$(CPP) $(FLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	@rm -rf $(NAME)

@@ -1,27 +1,28 @@
 #include "Intern.hpp"
 
+Intern::~Intern() {}
+
 Intern::Intern() {}
 
 Intern::Intern(const Intern &cpy) {
     *this = cpy;
 }
 
-Intern &Intern::operator = (const Intern &cpy) {
+Intern &Intern::operator=(const Intern &cpy) {
     (void)cpy;
     return (*this);
 }
 
-AForm *Intern::makeForm(const std::string form, const std::string target) {
+AForm *Intern::makeForm(const string form, const string target) {
     int i = -1;
 	AForm *iter = NULL;
-    std::string form_types[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+    string formTypes[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
     while (++i < 3) {
-        if (form == form_types[i])
+        if (form == formTypes[i])
             break;
 	}
-	switch (i)
-	{
+	switch (i) {
 		case 0:
 			iter = new ShrubberyCreationForm(target);
 			break;
@@ -40,5 +41,3 @@ AForm *Intern::makeForm(const std::string form, const std::string target) {
 const char* Intern::UnknowForm:: what() const throw() {
 	return ("Unknown form name.");
 }
-
-Intern::~Intern() {}

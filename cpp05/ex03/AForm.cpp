@@ -20,8 +20,8 @@ AForm::AForm(string n, int sg, int eg) : _name(n), _signGrade(sg), _execGrade(eg
     cout << "AForm constructor is called." << endl;
 }
 
-AForm::AForm(const AForm &cpy) : _name(cpy._name), _isSigned(cpy._isSigned), _signGrade(cpy._signGrade), _execGrade(cpy._execGrade) {
-    cout << "AForm copy constructor is called." << endl;
+AForm::AForm(const AForm &cpy) : _name(cpy._name),  _signGrade(cpy._signGrade), _execGrade(cpy._execGrade), _isSigned(cpy._isSigned) {
+    cout << "Form copy constructor is called." << endl;
 }
 
 AForm &AForm::operator=(const AForm &cpy) {

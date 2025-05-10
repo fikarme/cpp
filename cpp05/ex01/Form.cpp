@@ -20,7 +20,7 @@ Form::Form(string n, int sg, int eg) : _name(n), _signGrade(sg), _execGrade(eg),
     cout << "Form constructor is called." << endl;
 }
 
-Form::Form(const Form &cpy) : _name(cpy._name), _isSigned(cpy._isSigned), _signGrade(cpy._signGrade), _execGrade(cpy._execGrade) {
+Form::Form(const Form &cpy) : _name(cpy._name),  _signGrade(cpy._signGrade), _execGrade(cpy._execGrade), _isSigned(cpy._isSigned) {
     cout << "Form copy constructor is called." << endl;
 }
 
