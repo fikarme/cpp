@@ -67,7 +67,7 @@ ostream &operator<<(ostream &output, const AForm &f) {
     return output;
 }
 
-void AForm::execute(Bureaucrat const &executor) const {
+void AForm::executeForm(Bureaucrat const &executor) const {
     try {
         if (this->_isSigned == false)
             throw(AFormNotSigned());

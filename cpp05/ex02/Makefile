@@ -1,19 +1,29 @@
-NAME    = lain
-CPP     = c++
-FLAGS   = -std=c++98 -Wall -Wextra -Werror
-SRCS    = $(wildcard *.cpp)
-HDRS    = $(wildcard *.hpp)
+NAME    	= lain
+CPP     	= c++
+CPPFLAGS	= -std=c++98 -Wall -Wextra -Werror
+RM			= rm -rf
+OBJDIR		= Obj
+SRCS    	= $(wildcard *.cpp)
+OBJ			= $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
+
+$(OBJDIR)/%.o: %.cpp
+	@mkdir -p $(OBJDIR)
+	@$(CPP) $(CPPFLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(SRCS) $(HDRS)
-	@$(CPP) $(FLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(OBJ)
+	@$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	@rm -rf $(NAME)
+	@$(RM) $(OBJDIR)
 
 fclean: clean
+	@$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+e: fclean $(NAME)
+	@./$(NAME)
+
+.PHONY: all clean fclean re e

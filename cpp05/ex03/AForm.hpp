@@ -1,9 +1,6 @@
 #ifndef AFORM_HPP
 #define AFORM_HPP
 
-#include <string>
-#include <iostream>
-#include <exception>
 #include "Bureaucrat.hpp"
 
 using std::cout;

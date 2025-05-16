@@ -24,20 +24,23 @@ AForm *Intern::makeForm(const string form, const string target) {
 	}
 	switch (i) {
 		case 0:
+			cout << "Intern creates " << form << " form." << endl;
 			iter = new ShrubberyCreationForm(target);
 			break;
 		case 1:
+			cout << "Intern creates " << form << " form." << endl;
 			iter = new RobotomyRequestForm(target);
 			break;
 		case 2:
+			cout << "Intern creates " << form << " form." << endl;
 			iter = new PresidentialPardonForm(target);
 			break;
 		default:
 			throw (Intern::UnknowForm());
 	}
-    return (iter);
+    return iter;
 }
 
 const char* Intern::UnknowForm:: what() const throw() {
-	return ("Unknown form name.");
+	return "Unknown form name.";
 }

@@ -1,7 +1,8 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(string target) : AForm("RobotomyRequestForm", 72, 45), _target(target) {
-}
+RobotomyRequestForm::~RobotomyRequestForm() {}
+
+RobotomyRequestForm::RobotomyRequestForm(string target) : AForm("RobotomyRequestForm", 72, 45), _target(target) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &cpy) : AForm(cpy) {}
 
@@ -18,5 +19,3 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
     else
         cout << this->_target << " robotomy failed." << endl;
 }
-
-RobotomyRequestForm::~RobotomyRequestForm() {}
