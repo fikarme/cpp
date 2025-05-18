@@ -9,15 +9,18 @@ AForm::AForm() : _name(""), _signGrade(150), _execGrade(150), _isSigned(false) {
 }
 
 AForm::AForm(string n, int sg, int eg) : _name(n), _signGrade(sg), _execGrade(eg), _isSigned(false) {
-    try {
+    cout << "AForm constructor is called." << endl;
+    try
+    {
         if (sg < 1 || eg < 1)
             throw (GradeTooHighException());
         else if (sg > 150 || eg > 150)
             throw (GradeTooLowException());
-    } catch (exception &e) {
+    }
+    catch (exception &e)
+    {
         cout << e.what() << endl;
     }
-    cout << "AForm constructor is called." << endl;
 }
 
 AForm::AForm(const AForm &cpy) : _name(cpy._name),  _signGrade(cpy._signGrade), _execGrade(cpy._execGrade), _isSigned(cpy._isSigned) {

@@ -1,46 +1,58 @@
 #include "Form.hpp"
 
+inline void y() {
+    cout << "\033[1;33m ---------\033[0m" << endl;
+}
+
+// inline void r() {
+//     cout << "\033[1;31m ---\033" << endl;
+// }
+
+// inline void g() {
+//     cout << "\033[1;32m ---\033" << endl;
+// }
+
+// inline void b() {
+//     cout << "\033[1;34m ---\033" << endl;
+// }
+
+
 int main() {
-    Bureaucrat mucox("Muco", 1);
-    Bureaucrat esadx("Esad", 1);
-    Bureaucrat fikarmex("Akif", 151);
-    Bureaucrat bot1("Bot1", 0);
-    Bureaucrat bot2("Bot2", -12);
-
-    
-    std::cout << "----------" << std::endl;
-    std::cout << mucox.getName() << " - " << mucox.getGrade() << std::endl;
-    esadx.increment();
+y();
+    Bureaucrat mucox("Muco", 42);
+    Bureaucrat akefx("Akef", 11);
+    Bureaucrat low("low", 151);
+    Bureaucrat high("high", 0);
+    Bureaucrat tooHigh("tooHigh", -42);
+y();
+    akefx.increment();
     mucox.decrement();
-    std::cout << esadx << std::endl;
-    std::cout << mucox << std::endl;
-    std::cout << "----------" << std::endl << std::endl;
-
-
-    std::cout << "----- FORM -----" << std::endl;
-    Form a("A", 1, 4);
-    Form b("B", 6, 9);
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-
-    mucox.signForm(a);
-    esadx.signForm(a);
-    esadx.signForm(a);
-    std::cout << a.getIsSigned() << std::endl;
-    std::cout << b.getIsSigned() << std::endl;
-    std::cout << "----------" << std::endl << std::endl;
-
+y();
+    cout << akefx << endl;
+    cout << mucox << endl;
+y();
+    Form af("A", 1, 4);
+    Form bf("B", 6, 9);
+    cout << af << endl;
+    cout << bf << endl;
+y();
+    mucox.signForm(af);
+    akefx.signForm(af);
+    akefx.signForm(af);
+    cout << af.getIsSigned() << endl;
+    cout << bf.getIsSigned() << endl;
+y();
     Bureaucrat lowGradeBureaucrat("LowGrade", 150);
-    Form c("C", 100, 50);
-    Form d("D", 1, 1);
-
-    std::cout << c << std::endl;
-    std::cout << d << std::endl;
-
-    lowGradeBureaucrat.signForm(c);
-    lowGradeBureaucrat.signForm(d);
-
-    std::cout << c.getIsSigned() << std::endl;
-    std::cout << d.getIsSigned() << std::endl;
-    std::cout << "----------" << std::endl << std::endl;
+    Form cf("C", 100, 50);
+    Form df("D", 1, 1);
+y();
+    cout << cf << endl;
+    cout << df << endl;
+y();
+    lowGradeBureaucrat.signForm(cf);
+    lowGradeBureaucrat.signForm(df);
+y();
+    cout << cf.getIsSigned() << endl;
+    cout << df.getIsSigned() << endl;
+y();
 }

@@ -9,15 +9,18 @@ Form::Form() : _name(""), _signGrade(150), _execGrade(150), _isSigned(false) {
 }
 
 Form::Form(string n, int sg, int eg) : _name(n), _signGrade(sg), _execGrade(eg), _isSigned(false) {
-    try {
+    cout << "Form constructor is called." << endl;
+    try
+    {
         if (sg < 1 || eg < 1)
             throw (GradeTooHighException());
         else if (sg > 150 || eg > 150)
             throw (GradeTooLowException());
-    } catch (exception &e) {
+    }
+    catch (exception &e)
+    {
         cout << e.what() << endl;
     }
-    cout << "Form constructor is called." << endl;
 }
 
 Form::Form(const Form &cpy) : _name(cpy._name),  _signGrade(cpy._signGrade), _execGrade(cpy._execGrade), _isSigned(cpy._isSigned) {
@@ -62,7 +65,9 @@ const char* Form::GradeTooLowException::what() const throw() {
 }
 
 ostream &operator<<(ostream &output, const Form &f) {
-    output << f.getName() << " Form: sign grade " << f.getGrade() 
-        << ", execute grade " << f.getExecGrade() << ", form is signed " << f.getIsSigned() << ".";
+    output << "Form Name: " << f.getName() << endl;
+    output << "Sign Grade: " << f.getGrade() << endl;
+    output << "Execute Grade: " << f.getExecGrade() << endl;
+    output << "Is Signed: " << f.getIsSigned() << endl;
     return output;
 }

@@ -6,14 +6,17 @@ Bureaucrat::~Bureaucrat(){
 
 Bureaucrat::Bureaucrat(const string name, int grade) : _name(name){
     cout << "Bureaucrat constructor called." << endl;
-    try {
+    try
+	{
         if (grade > 150)
             throw (GradeTooLowException());
         else if (grade < 1)
             throw (GradeTooHighException());
         else
             _grade = grade;
-    } catch (const exception &e){
+    }
+	catch (const exception &e)
+	{
         cout << e.what() << endl;
     }
 }
@@ -39,10 +42,13 @@ int Bureaucrat::getGrade() const{
 
 void Bureaucrat::increment(){
 	this->_grade--;
-	try {
+	try
+    {
 		if (_grade < 1)
 			throw(GradeTooHighException());
-	} catch (const exception &e){
+	}
+    catch (const exception &e)
+    {
 		this->_grade++;
 		cout << e.what() << endl;
 	}
@@ -50,10 +56,13 @@ void Bureaucrat::increment(){
 
 void Bureaucrat::decrement(){
 	this->_grade++;
-	try {
+	try
+    {
 		if (_grade > 150)
 			throw(GradeTooLowException());
-	} catch (const exception &e){
+	}
+    catch (const exception &e)
+    {
 		this->_grade--;
 		cout << e.what() << endl;
 	}
@@ -77,10 +86,13 @@ void Bureaucrat::signForm(AForm &f) {
         cout << this->_name << " couldn't sign " << f.getName() << " because " << "the form is already signed." << endl;
         return ;
     }
-    try {
+    try 
+    {
         f.beSigned(*this);
         cout << this->_name << " signed " << f.getName() << endl;
-    } catch (const exception &e) {
+    }
+    catch (const exception &e)
+    {
         cout << this->_name << " couldn't sign " << f.getName() << " because " << e.what() << endl;
     }
 }
