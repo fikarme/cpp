@@ -5,38 +5,31 @@ AForm::~AForm() {
 }
 
 AForm::AForm() : _name(""), _signGrade(150), _execGrade(150), _isSigned(false) {
-    cout << "AForm constructor is called." << endl;
+    cout << "AForm default constructor is called." << endl;
 }
 
 AForm::AForm(string n, int sg, int eg) : _name(n), _signGrade(sg), _execGrade(eg), _isSigned(false) {
-    cout << "AForm constructor is called." << endl;
-    try
-    {
-        if (sg < 1 || eg < 1)
-            throw (GradeTooHighException());
-        else if (sg > 150 || eg > 150)
-            throw (GradeTooLowException());
-    }
-    catch (exception &e)
-    {
-        cout << e.what() << endl;
-    }
+    cout << "AForm constructor with parameters is called." << endl;
+    if (sg < 1 || eg < 1)
+        throw GradeTooHighException();
+    else if (sg > 150 || eg > 150)
+        throw GradeTooLowException();
 }
 
 AForm::AForm(const AForm &cpy) : _name(cpy._name),  _signGrade(cpy._signGrade), _execGrade(cpy._execGrade), _isSigned(cpy._isSigned) {
-    cout << "Form copy constructor is called." << endl;
+    cout << "AForm copy constructor is called." << endl;
 }
 
 AForm &AForm::operator=(const AForm &cpy) {
+    cout << "AForm copy assignment operator is called." << endl;
     if (this != &cpy)
     	this->_isSigned = cpy._isSigned;
-    cout << "AForm copy assignment constructor is called." << endl;
     return (*this);
 }
 
 void AForm::beSigned(const Bureaucrat &b) {
-    if (b.getGrade() > this->getGrade())
-        throw(GradeTooLowException());
+    if (b.getGrade() > this->_signGrade)
+        throw GradeTooLowException();
     this->_isSigned = true;
 }
 
@@ -71,15 +64,12 @@ ostream &operator<<(ostream &output, const AForm &f) {
 }
 
 void AForm::execute(Bureaucrat const &executor) const {
-    try {
-        if (this->_isSigned == false)
-            throw(AFormNotSigned());
-        else if (executor.getGrade() > this->_execGrade)
-            throw(GradeTooLowException());
-        cout << executor.getName() << ", executed the " << this->getName() << "." << endl;
-    } catch (exception &e) {
-        cout << e.what() << endl;
-    }
+    if (this->_isSigned == false)
+        throw AFormNotSigned();
+    else if (executor.getGrade() > this->_execGrade)
+        throw GradeTooLowException();
+    // Specific execution logic will be in derived classes
+    // cout << executor.getName() << ", executed the " << this->getName() << "." << endl; // Moved to derived classes
 }
 
 const char* AForm::AFormNotSigned::what() const throw() {
