@@ -68,6 +68,6 @@ ostream &operator<<(ostream &output, const Form &f) {
     output << "Form Name: " << f.getName() << endl;
     output << "Sign Grade: " << f.getGrade() << endl;
     output << "Execute Grade: " << f.getExecGrade() << endl;
-    output << "Is Signed: " << f.getIsSigned() << endl;
+    output << "Is Signed: " << f.getIsSigned();
     return output;
 }

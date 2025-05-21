@@ -65,19 +65,24 @@ const char* AForm::GradeTooLowException::what() const throw() {
 }
 
 ostream &operator<<(ostream &output, const AForm &f) {
-    output << f.getName() << " AForm: sign grade " << f.getGrade() 
-        << ", execute grade " << f.getExecGrade() << ", Aform is signed " << f.getIsSigned() << ".";
+    output << "AForm Name: " << f.getName() << endl;
+    output << "Sign Grade: " << f.getGrade() << endl;
+    output << "Execute Grade: " << f.getExecGrade() << endl;
+    output << "Is Signed: " << f.getIsSigned();
     return output;
 }
 
 void AForm::execute(Bureaucrat const &executor) const {
-    try {
+    try
+    {
         if (this->_isSigned == false)
             throw(AFormNotSigned());
         else if (executor.getGrade() > this->_execGrade)
             throw(GradeTooLowException());
         cout << executor.getName() << ", executed the " << this->getName() << "." << endl;
-    } catch (exception &e) {
+    }
+    catch (exception &e)
+    {
         cout << e.what() << endl;
     }
 }
